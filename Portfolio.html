@@ -1,265 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="Artistic portfolio for Katie Bellows, based out of Provo, UT." />
-        <title>Katie Bellows</title>
-        <!-- fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="my_css.css" rel="stylesheet" />
-        
-        <style>
-            
-            .header {
-                text-align:center;
-                font-family:sans-serif;
-                padding:14px;
-                background-color:#f1f1f1;
-                box-shadow:4px 4px 4px rgba(0, 0, 0, 0.3);
-            }
-            
-            h1,h2,h3,h4 {
-                font-family: sans-serif;
-                
-            }
-            
-             .button {
-                padding: 10px 20px;
-                background-color: #74b78b; 
-                color: white;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                text-decoration: none;
-                display: inline-block;
-                transition: background-color 0.3s ease;
-              }
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Artistic portfolio for Katie Bellows, based out of Provo, UT." />
+  <title>Katie Bellows</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
+  <!-- Core theme CSS -->
+  <link href="my_css.css" rel="stylesheet" />
 
-              .button:hover {
-                background-color: #45a049; 
-              }
-            
-            hr {
-                width: 80%; margin: 20px auto; border: none; height: 2px; background-color: #74b78b;
-            }
-            .container {
-                  max-width: 100%;
-                overflow-x: hidden;
-                padding:14px;
-                min-height: 80vw;
-            }
-            
-            .content-wrapper {
-                  max-width: 100%;
-                overflow-x: hidden;
-                padding:14px;
-                
-            }
-            
-                  
-            
-    .dropdown {
-      position: relative;
-      display: block;
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fff;
+background-image: url('assets/img/watercolor.jpeg'); /* Or .png, .webp, etc. */
+  background-size: cover; /* Makes the image cover the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */   
+        background-attachment: fixed;
+      }
+      
+      h2{
+          text-align: center;
+      }  
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+
     }
-            
+
+    .dropdown {
+      margin-bottom: 30px; /*spacing between dropdowns */
+    }      
+      
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Varela Round', sans-serif;
+      padding: 24px 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #333;
+        margin-bottom:10px;
+    }
+
+    .header p {
+      font-size: 1rem;
+      color: #777;
+      margin-top: -8px;
+    }
+
+    .container {
+      max-width: 100%;
+      overflow-x: hidden;
+      
+      margin-top:0;
+    }
+
+    .dropdown {
+      margin: 20px auto;
+      width: 90%;
+    }
+
     .dropdown-btn {
-        width: 100%;
+      width: 100%;
       padding: 14px;
+      margin:8px auto;
       background-color: #74b78b;
       color: white;
-      font-size: 16px;
+      font-size: 18px;
       border: none;
+      border-radius: 12px;
       cursor: pointer;
-        text-align: left;
-    }        
+      text-align: left;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .dropdown-btn::after {
+      content: "▼";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-btn.open::after {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-btn:hover {
+      background-color: #5fa37a;
+    }
 
     .dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  position: relative;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  width: 100vw;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;          
-}
-
-.dropdown-content.show {
-  max-height: 5000px; /*adjust here*/
-}            
-            
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-        
-    }
-   .dropdown-content h3 {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-        
-    }            
-
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background-color: #fdfdfd;
+      width: 100%;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border-radius: 8px;
+      padding: 0 30px;
     }
 
-   
+    .dropdown-content.show {
+      max-height: 5000px;
+      padding: 14px;
+    }
+
+    .dropdown-content h3 {
+      margin-top: 20px;
+      color: #222;
+    }
+
+    .dropdown-content a,
+    .dropdown-content p {
+      padding: 12px 0;
+      color: #333;
+    }
+
+    iframe {
+      border-radius: 12px;
+      max-width: 100%;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #74b78b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    hr {
+      width: 80%;
+      margin: 20px auto;
+      border: none;
+      height: 2px;
+      background-color: #4CAF50;
+    }
+
+    .pdf-box {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
   </style>
-        
-    </head>
-    <body>
-        <div class="header">
-            <h1>Katie Bellows</h1>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Katie Bellows</h1>
+    <p>Composer | Pianist | Storyteller</p>
+  </div>
+
+  <div class="container">
+      <div class="content-wrapper">
+    <h2 id="top">My Portfolio</h2>
+
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown('Dropdown1', this)">Piano Solos</button>
+      <div id="Dropdown1" class="dropdown-content">
+        <h3>"Wherever the Waves Take Me"</h3>
+        <iframe src="https://open.spotify.com/embed/track/6JZeWU004dO61GipMGv7QK?si=793f8d1a01a746c4" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <hr>
+
+        <h3>"Waltz"</h3>
+        <iframe src="https://open.spotify.com/embed/track/3tVXW2DM4zqscGj8z8Wf81?si=5a4c2fae4e3049f4" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <hr>
+
+        <h3>"Sailing Away"</h3>
+        <iframe src="https://open.spotify.com/embed/track/1chuDlwKbs2xzL0vKvYFBz?si=ecb2d97dfdf048bc" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <hr>
+      </div>
+
+      <button class="dropdown-btn" onclick="toggleDropdown('Dropdown2', this)">Orchestral Stuff</button>
+      <div id="Dropdown2" class="dropdown-content">
+        <h3>"Determined to Dance"</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z677z--LdZw" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+
+        <h3>Violin Concerto</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CRxoC6rZFWI" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+
+        <h3>"Wherever the Waves Take Me"</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/P0Azv4iPvtY" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <button class="dropdown-btn" onclick="toggleDropdown('Dropdown3', this)">Choir Music</button>
+      <div id="Dropdown3" class="dropdown-content">
+        <h3>"His Will"</h3>
+        <p>Inspired by the "Come, Follow Me" program this year, this song tells the stories of Oliver Cowdery and Mary Whitmer who made big sacrifices when they learned about Joseph Smith's revelations.</p>
+        <div class="pdf-box">
+          <iframe src="pdfs/His%20work_watermark.pdf" width="100%" height="400px"></iframe>
         </div>
-        <div style="padding:14px;">
-          
-            <h2 style="text-indent: 2em;">My Portfolio</h2>
-            
-            <div class="dropdown">
-                <button class="dropdown-btn" onclick="toggleDropdown('Dropdown1')">Piano Solos</button>
-                    <div id="Dropdown1" class="dropdown-content"> 
-                        <div class="content-wrapper">
-                      <h3>"Wherever the Waves Take Me"</h3>
-                        
-                        <iframe style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/track/6JZeWU004dO61GipMGv7QK?si=793f8d1a01a746c4?utm_source=generator" 
-                                width=500px 
-                                height="152" 
-                                frameBorder="0" 
-                                allowfullscreen="" 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                        </iframe>
-                              
-                        <hr style="width: 80%; margin: 20px auto; border: none; height: 2px; background-color: #4CAF50;">
 
-                            <h3>"Waltz"</h3>
-                        
-                        <iframe style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/track/3tVXW2DM4zqscGj8z8Wf81?si=5a4c2fae4e3049f4?utm_source=generator" 
-                                width=500px 
-                                height="152" 
-                                frameBorder="0" 
-                                allowfullscreen="" 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                        </iframe>
-                              
-                        <hr style="width: 80%; margin: 20px auto; border: none; height: 2px; background-color: #4CAF50;">
-
-                            <h3>"Sailing Away"</h3>
-                        
-                        <iframe style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/track/1chuDlwKbs2xzL0vKvYFBz?si=ecb2d97dfdf048bc?utm_source=generator" 
-                                width=500px 
-                                height="152" 
-                                frameBorder="0" 
-                                allowfullscreen="" 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                        </iframe>
-                              
-                        <hr style="width: 80%; margin: 20px auto; border: none; height: 2px; background-color: #4CAF50;">
-                            
-                        </div>
-                    </div>    
-                <button class="dropdown-btn" onclick="toggleDropdown('Dropdown2')">Orchestral Stuff</button>
-                    <div id="Dropdown2" class="dropdown-content"> 
-                        <div class="content-wrapper">
-                      <h3>"Determined to Dance"</h3>       
-                
-                        
-                        <iframe width="560" height="315" 
-                            src="https://www.youtube.com/embed/Z677z--LdZw" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                    <hr>
-                    <h3>Violin Concerto</h3>       
-                
-                        
-                        <iframe width="560" height="315" 
-                            src="https://www.youtube.com/embed/CRxoC6rZFWI" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>        
-                    <hr>
-                    <h3>"Wherever the Waves Take Me"</h3>       
-                
-                        
-                        <iframe width="560" height="315" 
-                            src="https://www.youtube.com/embed/P0Azv4iPvtY" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>          
-                    </div>
-                </div>
-                
-                <button class="dropdown-btn" onclick="toggleDropdown('Dropdown3')">Choir Music</button>
-                    <div id="Dropdown3" class="dropdown-content"> 
-                        <div class="content-wrapper">
-                      <h3>"His Will"</h3>
-                            <p>Inspired by the "Come, Follow Me" program this year, this song tells the stories of Oliver Cowdery and Mary Whitmer who made big sacrifices when they learned about Joseph Smith's revelations.</p>
-                        <div style="max-width: 600px; margin: 20px auto; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
-                          <iframe 
-                            src="pdfs/His%20work_watermark.pdf" 
-                            width="100%" 
-                            height="400px"
-                            style="border: none; border-radius: 8px;">
-                          </iframe>
-                        </div> 
-                            
-                        <h3>"All is Lost"</h3>
-                            <p>This short piece tells the terrible moment when Joseph realized the first manuscript pages of the Book of Mormon were lost. Read Doctine and Covenants Section 3 for more background!</p>
-                        <div style="max-width: 600px; margin: 20px auto; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
-                          <iframe 
-                            src="pdfs/Katie_Bellows_lost_manuscript_watermark.pdf" 
-                            width="100%" 
-                            height="400px"
-                            style="border: none; border-radius: 8px;">
-                          </iframe>
-                        </div>     
-
-                            
-                        </div>
-                </div>
-            </div> 
-            
-            <div style="padding:40px; text-align: center;">
-            <a href="index.html" class="button">
-                  Back to home
-                </a>
-            </div>
+        <h3>"All is Lost"</h3>
+        <p>This short piece tells the terrible moment when Joseph realized the first manuscript pages of the Book of Mormon were lost. Read Doctine and Covenants Section 3 for more background!</p>
+        <div class="pdf-box">
+          <iframe src="pdfs/Katie_Bellows_lost_manuscript_watermark.pdf" width="100%" height="400px"></iframe>
         </div>
-    <script>
-   function toggleDropdown(id) {
-    //close part
-    const allDropdowns = document.querySelectorAll('.dropdown-content');
-    allDropdowns.forEach(drop => {
-      if (drop.id !== id) {
-        drop.classList.remove('show');
-      }
-    });
+      </div>
+    </div>
 
-    //toggle part
-    const target = document.getElementById(id);
-    target.classList.toggle('show');
-  }
-        </script>
-        
-    </body>
+    <div style="padding:40px; text-align: center;">
+      <a href="index.html" class="button">Back to home</a>
+          </div>
+    </div>
+
+      <div style="padding:40px; text-align: center;">
+      <a href="#top" class="button">To Top</a>
+          </div>
+    </div>
+      
+  </div>
+
+  <script>
+    function toggleDropdown(id, button) {
+      const allDropdowns = document.querySelectorAll('.dropdown-content');
+      const allButtons = document.querySelectorAll('.dropdown-btn');
+
+      allDropdowns.forEach(drop => {
+        if (drop.id !== id) {
+          drop.classList.remove('show');
+        }
+      });
+
+      allButtons.forEach(btn => {
+        if (btn !== button) {
+          btn.classList.remove('open');
+        }
+      });
+
+      const target = document.getElementById(id);
+      target.classList.toggle('show');
+      button.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
