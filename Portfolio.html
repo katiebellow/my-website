@@ -8,10 +8,169 @@
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
   <!-- Core theme CSS -->
-  <link href="my_css.css" rel="stylesheet" />
+  <link href="my_css.css" rel="stylesheet" type="text/css" />
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fff;
+background-image: url('assets/img/watercolor.jpeg'); /* Or .png, .webp, etc. */
+  background-size: cover; /* Makes the image cover the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */   
+        background-attachment: fixed;
+      }
+      
+      h2{
+          text-align: center;
+      }  
 
+    .content-wrapper {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+
+    }
+
+    .dropdown {
+      margin-bottom: 30px; /*spacing between dropdowns */
+    }      
+      
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Varela Round', sans-serif;
+      padding: 24px 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #333;
+        margin-bottom:10px;
+    }
+
+    .header p {
+      font-size: 1rem;
+      color: #777;
+      margin-top: -8px;
+    }
+
+    .container {
+      max-width: 100%;
+      overflow-x: hidden;
+      
+      margin-top:0;
+    }
+
+    .dropdown {
+      margin: 20px auto;
+      width: 90%;
+    }
+
+    .dropdown-btn {
+      width: 100%;
+      padding: 14px;
+      margin:8px auto;
+      background-color: #74b78b;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .dropdown-btn::after {
+      content: "▼";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-btn.open::after {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-btn:hover {
+      background-color: #5fa37a;
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background-color: #fdfdfd;
+      width: 100%;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border-radius: 8px;
+      padding: 0 30px;
+    }
+
+    .dropdown-content.show {
+      max-height: 5000px;
+      padding: 14px;
+    }
+
+    .dropdown-content h3 {
+      margin-top: 20px;
+      color: #222;
+    }
+
+    .dropdown-content a,
+    .dropdown-content p {
+      padding: 12px 0;
+      color: #333;
+    }
+
+    iframe {
+      border-radius: 12px;
+      max-width: 100%;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #74b78b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    hr {
+      width: 80%;
+      margin: 20px auto;
+      border: none;
+      height: 2px;
+      background-color: #4CAF50;
+    }
+
+    .pdf-box {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
 
   </style>
 </head>
